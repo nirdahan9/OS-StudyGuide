@@ -1,0 +1,41 @@
+ex2/
+├── 📚 Main Library Files (Core Implementation)
+│   ├── uthreads.c          (Main threading library implementation)
+│   ├── uthreads.h          (Threading library header)
+│   ├── uthread_queue.c     (Queue management)
+│   ├── uthread_queue.h     (Queue header)
+│   ├── jump.c              (Architecture-specific assembly wrapper)
+│   └── jump.h              (Jump buffer operations)
+│
+├── 📁 documentation/       (Reports, PDFs, and analysis)
+│   ├── *.md                (Analysis and diagnostic reports)
+│   ├── *.pdf               (Exercise PDF and documentation)
+│   └── *.docx              (Word documents)
+│
+├── 📁 test_binaries/       (Pre-compiled test executables)
+│   ├── test_provided       (Provided test suite)
+│   ├── test_uthreads       (Alternative test suite)
+│   ├── test_block_debug    (Debug test for block/resume)
+│   └── run_all_tests.sh    (Script to run all tests)
+│
+├── 📁 my_tests/            (Comprehensive custom test suites)
+│   ├── comprehensive_test_balanced.c
+│   ├── comprehensive_test_extended.c
+│   ├── test_bin_01-05      (Specific functionality tests)
+│   ├── test_*.c            (Source files)
+│   └── README.md           (Test documentation)
+│
+├── 📁 example/             (Example usage)
+│   └── example.c           (Sample program using uthreads)
+│
+├── 📁 tests/               (Original test files)
+│   └── test.c              (Original provided test)
+│
+├── 📁 debug_scripts/       (Debug and analysis tools)
+│   ├── gdb_script.txt      (GDB debugging commands)
+│   ├── *.c                 (Debug source files)
+│   └── *.sh                (Debug shell scripts)
+│
+├── 📁 screenshots/         (Documentation screenshots)
+│
+└── 📁 .dev/                (VSCode configuration)

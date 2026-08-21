@@ -1,0 +1,26 @@
+========================================
+   RUNNING COMPREHENSIVE TESTS
+========================================
+
+[1;33mRunning: test_01_init_validation[0m
+File: /workspaces/Exercises/ex2/my_tests/test_01_init_validation.c
+========================================
+   TEST 1: uthread_init Validation
+========================================
+
+uthread_init(100000) returned: 0
+[PASS] init returns 0
+
+total_quantums immediately after init: 1
+[PASS] total_quantums == 1
+
+main thread quantums: 1
+[PASS] main thread quantums == 1
+
+main thread tid: 0
+[PASS] main thread tid == 0
+
+========================================
+        ALL TESTS PASSED!
+========================================
+[0;32m[PASS] test_01_init_validation completed successfully[0m

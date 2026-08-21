@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Local tooling config
+.claude/settings.local.json
+.vercel/
+
+# Excluded by request: 142MB, over GitHub's 100MB per-file limit
+מערכות הפעלה - סיכום תומר רוזנטל.pdf
+*סיכום תומר רוזנטל*.pdf
+
+# Excluded by request: un-merged source PDFs (merged versions are included)
+Lectures/
+Recitations/

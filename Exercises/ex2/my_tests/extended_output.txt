@@ -1,0 +1,84 @@
+thread library error: entry_point cannot be NULL
+thread library error: entry_point cannot be NULL
+thread library error: cannot block main thread
+thread library error: invalid thread ID
+thread library error: invalid thread ID
+thread library error: main thread cannot sleep
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║        COMPREHENSIVE UTHREADS TEST SUITE - EXTENDED EDITION                ║
+║                    User-Level Threading Library                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Initializing test environment...
+✓ uthreads initialized successfully
+
+
+========================================================================
+TEST GROUP 1: INITIALIZATION VALIDATION
+========================================================================
+[✓ PASS] 1.1: uthread_init(10000) returns 0
+[✓ PASS] 1.2: Main thread ID is 0
+[✓ PASS] 1.3: Total quantums is at least 1 after init
+[✓ PASS] 1.4: Main thread quantums >= 1 after init
+[✓ PASS] 1.5: get_quantums(invalid_tid) returns -1
+[✓ PASS] 1.6: Total quantums counter is positive
+------------------------------------------------------------------------
+
+========================================================================
+TEST GROUP 2: SPAWN BASIC FUNCTIONALITY
+========================================================================
+[✓ PASS] 2.1: First spawn returns TID 1
+[✓ PASS] 2.2: Second spawn returns TID 2
+[✓ PASS] 2.3: Third spawn returns TID 3
+[✓ PASS] 2.4: Newly spawned thread has 0 quantums
+[✓ PASS] 2.5: spawn(NULL) returns -1
+[✓ PASS] 2.6: Second spawn(NULL) returns -1
+------------------------------------------------------------------------
+
+========================================================================
+TEST GROUP 2.B: SPAWN ERROR CASES
+========================================================================
+[✓ PASS] 2.7: Spawn returns incrementing TIDs
+[✓ PASS] 2.8: Multiple sequential spawns return correct TIDs
+------------------------------------------------------------------------
+
+========================================================================
+TEST GROUP 2.C: SPAWN MAX THREAD LIMIT
+========================================================================
+[✓ PASS] 2.9: Can spawn many threads
+[✓ PASS] 2.10: spawn respects the limit when needed
+2.9 INFO: Spawned 35 threads, next spawn returned 46
+------------------------------------------------------------------------
+
+========================================================================
+TEST GROUP 3: BLOCK/RESUME STATE TRANSITIONS
+========================================================================
+[✓ PASS] 3.1: block(main_tid=0) returns -1
+[✓ PASS] 3.2: block(invalid_tid) returns -1
+[✓ PASS] 3.3: block(valid_tid) returns 0
+[✓ PASS] 3.4: resume on main thread has defined behavior
+[✓ PASS] 3.5: resume(blocked_tid) returns 0
+[✓ PASS] 3.6: resume(invalid_tid) returns -1
+[✓ PASS] 3.7: blocking already-blocked thread returns 0 (no-op)
+[✓ PASS] 3.8: resume on non-blocked thread returns 0 (no-op)
+------------------------------------------------------------------------
+
+========================================================================
+TEST GROUP 3.B: BLOCK/RESUME COMPLEX SCENARIOS
+========================================================================
+[✓ PASS] 3.9: Block → Resume → Block sequence works
+[✓ PASS] 3.10: Block/Resume multiple threads
+------------------------------------------------------------------------
+
+========================================================================
+TEST GROUP 4: SLEEP ERROR CASES
+========================================================================
+[✓ PASS] 4.1: uthread_sleep from main thread returns -1
+[⊘ SKIP] 4.2-4.3: Direct testing of sleep errors in spawned thread requires separate test executable
+------------------------------------------------------------------------
+
+========================================================================
+TEST GROUP 4.B: SLEEP BASIC FUNCTIONALITY
+========================================================================
+[✓ PASS] 4.4: Spawned thread with sleep capability
